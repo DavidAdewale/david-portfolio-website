@@ -13,6 +13,7 @@ type ProjectCardProps = {
   imageLabel: string;
   imageSrc?: string;
   liveUrl?: string;
+  liveLabel?: string;
   index?: number;
 };
 
@@ -24,6 +25,7 @@ export default function ProjectCard({
   imageLabel,
   imageSrc,
   liveUrl,
+  liveLabel = "Live Site",
   index = 0
 }: ProjectCardProps) {
   return (
@@ -82,7 +84,7 @@ export default function ProjectCard({
                 rel="noreferrer"
                 className="inline-flex rounded-full border border-ink/12 px-5 py-3 text-sm font-semibold text-ink transition hover:border-clay hover:text-clay"
               >
-                Live Site
+                {liveLabel}
               </a>
             ) : null}
           </div>

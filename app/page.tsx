@@ -7,6 +7,17 @@ import VideoEmbed from "@/components/VideoEmbed";
 
 const projects = [
   {
+    title: "South African Tourism Campaign Graphics",
+    description:
+      "Led art direction and campaign asset design across key visuals, social media graphics, video edits, and visual systems for South African Tourism campaigns.",
+    tags: ["Art Direction", "Graphic Design", "Campaign Design", "Social Media", "Video Editing"],
+    href: "/work/south-african-tourism",
+    imageLabel: "South African Tourism campaign key visual",
+    imageSrc: "/sat kv1.jpg",
+    liveUrl: "https://www.behance.net/gallery/235717421/South-African-Tourism",
+    liveLabel: "Behance"
+  },
+  {
     title: "Gladiator Booking & Operations Platform",
     description:
       "A scalable booking and administration system for managing boat cruises, beach house reservations, operational workflows, and customer management.",
@@ -41,7 +52,14 @@ const projects = [
 const skillGroups = [
   {
     title: "Design",
-    skills: ["UX/UI Design", "Wireframing", "Design Systems", "Responsive Design", "Information Architecture"]
+    skills: [
+      "UX/UI Design",
+      "Graphic Design",
+      "Art Direction",
+      "Campaign Design",
+      "Design Systems",
+      "Information Architecture"
+    ]
   },
   {
     title: "Frontend",
@@ -63,7 +81,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-end">
           <div>
             <p className="mb-7 text-xs font-medium uppercase tracking-[0.32em] text-gold">
-              Product Designer & Frontend Builder
+              Multidisciplinary Designer & Frontend Builder
             </p>
             <AnimatedText
               lines={["David Adewale", "designs and ships", "scalable digital", "experiences."]}
@@ -73,13 +91,13 @@ export default function Home() {
           <div className="md:pb-4">
             <ProfilePortrait />
             <p className="max-w-xl text-xl leading-8 text-bone/82 md:text-2xl md:leading-9">
-              I design and ship scalable digital experiences using modern frontend tools,
-              AI-assisted workflows, and systems-driven product thinking.
+              I design and ship scalable digital experiences, brand systems, and campaign
+              visuals using modern frontend tools and systems-driven creative thinking.
             </p>
             <p className="mt-7 max-w-xl text-base leading-7 text-bone/54">
               Hybrid designer-developer with experience building booking platforms, CMS
-              systems, operational tools, and investor-facing digital experiences across
-              startups, hospitality, finance, and media.
+              systems, operational tools, campaign graphics, and investor-facing digital
+              experiences across startups, hospitality, tourism, finance, and media.
             </p>
           </div>
         </div>
@@ -99,8 +117,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             eyebrow="Selected Work"
-            title="Case studies with systems, product thinking, and build detail."
-            copy="A focused selection of digital platforms, institutional systems, and frontend experiences designed for clarity and scale."
+            title="Case studies across product systems, campaign visuals, and build detail."
+            copy="A focused selection of digital platforms, brand systems, campaign graphics, and frontend experiences designed for clarity and scale."
           />
           <div>
             {projects.map((project, index) => (
@@ -120,7 +138,7 @@ export default function Home() {
           <div className="space-y-7 text-xl leading-9 text-bone/70 md:text-2xl md:leading-10">
             <p>
               I’m a multidisciplinary designer working across product design, frontend
-              development, digital systems, and strategic communications.
+              development, graphic design, digital systems, and strategic communications.
             </p>
             <p>
               My work focuses on building scalable systems that balance usability,

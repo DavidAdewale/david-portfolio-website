@@ -7,6 +7,16 @@ import VideoEmbed from "@/components/VideoEmbed";
 
 const projects = [
   {
+    title: "DiasporaSpot Content Platform & Website",
+    description:
+      "Designed and developed an SEO-friendly content platform for diaspora professionals, with Sanity CMS, workshop signup workflows, email capture, and analytics.",
+    tags: ["Next.js", "React", "Sanity CMS", "MailerLite", "Product Strategy"],
+    href: "/work/diasporaspot",
+    imageLabel: "DiasporaSpot homepage screenshot",
+    imageSrc: "/diasporaspot-homepage.png",
+    liveUrl: "https://www.diasporaspot.com/"
+  },
+  {
     title: "South African Tourism Campaign Graphics",
     description:
       "Led art direction and campaign asset design across key visuals, social media graphics, video edits, and visual systems for South African Tourism campaigns.",

@@ -9,6 +9,7 @@ const roles = [
   "Backend Architecture",
   "Workflow Mapping",
   "Information Architecture",
+  "Customer Experience Design",
   "Design Systems",
   "Product Direction"
 ];
@@ -22,19 +23,54 @@ const decisions = [
   },
   {
     title: "Flexible Booking Architecture",
-    copy: "The platform was structured to support multiple booking types while maintaining consistency across the user experience."
+    copy: "The platform was structured to support multiple booking types across the customer-facing website and internal admin system."
   },
   {
-    title: "Reusable Design Systems",
-    copy: "Reusable layouts, interface components, and interaction patterns were created to improve scalability and maintain consistency across the platform."
+    title: "Connected Customer and Admin Flows",
+    copy: "The customer site was designed for discovery and booking intent, while the admin platform supported the operational follow-through after requests were submitted."
   },
   {
     title: "Operational Clarity",
     copy: "The interface hierarchy prioritized clarity and fast decision-making for administrators managing multiple operational tasks simultaneously."
+  },
+  {
+    title: "Reusable Design Systems",
+    copy: "Reusable layouts, interface components, and interaction patterns were created to improve scalability and maintain consistency across the platform."
   }
 ];
 
-const screens = [
+const customerScreens = [
+  {
+    title: "Customer Homepage",
+    caption:
+      "A public-facing charter experience positioning Gladiator around private yacht charters, boat transfers, and waterfront stays in Lagos.",
+    src: "/gladiator-customer-homepage.png",
+    alt: "Gladiator customer-facing homepage screenshot"
+  },
+  {
+    title: "Booking Discovery",
+    caption:
+      "A guided discovery surface for filtering destinations, browsing available experience categories, and moving users toward charter requests.",
+    src: "/gladiator-customer-booking.png",
+    alt: "Gladiator customer booking discovery screenshot"
+  },
+  {
+    title: "Service Positioning",
+    caption:
+      "Customer-facing sections communicate concierge support, privacy, timing, and arrival details before users make a booking request.",
+    src: "/gladiator-customer-services.png",
+    alt: "Gladiator customer service positioning screenshot"
+  },
+  {
+    title: "Waterfront Stays",
+    caption:
+      "The customer site also supports private stay discovery, extending the platform beyond yacht charters into broader leisure experiences.",
+    src: "/gladiator-customer-stays.png",
+    alt: "Gladiator customer waterfront stays screenshot"
+  }
+];
+
+const adminScreens = [
   {
     title: "Bookings Management",
     caption:
@@ -77,29 +113,39 @@ export default function GladiatorCaseStudy() {
             Case Study
           </p>
           <h1 className="max-w-6xl font-serif text-6xl leading-[0.94] text-balance md:text-8xl">
-            Gladiator Booking & Operations Platform
+            Gladiator Customer Booking & Operations Platform
           </h1>
           <p className="mt-8 max-w-3xl text-xl leading-8 text-bone/68 md:text-2xl md:leading-9">
-            A scalable digital platform designed to centralize bookings, operational
-            workflows, customer management, and administrative visibility across
-            hospitality services.
+            A customer-facing booking website and internal operations platform designed
+            to support private charters, boat transfers, waterfront stays, and
+            administrative visibility across hospitality services.
           </p>
-          <a
-            href="https://admin.gladiatorleisures.com"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-flex rounded-full bg-bone px-5 py-3 text-sm font-semibold text-ink transition hover:bg-gold"
-          >
-            Visit Live Platform
-          </a>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="https://www.gladiatorleisures.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex rounded-full bg-bone px-5 py-3 text-sm font-semibold text-ink transition hover:bg-gold"
+            >
+              Visit Customer Site
+            </a>
+            <a
+              href="https://admin.gladiatorleisures.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex rounded-full border border-bone/16 px-5 py-3 text-sm font-semibold text-bone transition hover:border-gold hover:text-gold"
+            >
+              Visit Admin Platform
+            </a>
+          </div>
         </div>
       </section>
 
       <section data-nav-theme="dark" className="bg-ink px-5 pb-16 text-bone md:px-8 md:pb-24">
         <div className="mx-auto max-w-7xl">
           <ProjectImage
-            alt="Gladiator dashboard screenshot"
-            src="/gladiator-dahsboard.png"
+            alt="Gladiator customer-facing homepage screenshot"
+            src="/gladiator-customer-homepage.png"
             priority
             tone="dark"
           />
@@ -115,34 +161,37 @@ export default function GladiatorCaseStudy() {
           <div className="space-y-16">
             <CaseBlock title="Overview">
               <p>
-                Gladiator needed a centralized operational platform capable of managing
-                boat cruises, beach house reservations, customer bookings, payment
-                tracking, and internal workflows across multiple service categories.
+                Gladiator needed a connected digital platform that could serve customers
+                publicly while giving the team a centralized operational system behind
+                the scenes.
               </p>
               <p>
-                The existing system relied heavily on fragmented communication, manual
-                coordination, and disconnected operational processes, making scalability
-                increasingly difficult.
+                The public site needed to position private yacht charters, boat transfers,
+                and waterfront stays clearly, then guide users toward booking requests and
+                booking lookup flows.
               </p>
               <p>
-                The goal was to design and build a unified digital platform that
-                simplified operations while creating a scalable foundation for future
-                growth.
+                The admin platform supported the operational side: booking management,
+                customer records, service inventory, payment visibility, and internal
+                workflows across multiple service categories.
               </p>
             </CaseBlock>
 
             <CaseBlock title="Challenge">
               <p>
-                The operational workflow lacked centralized visibility across bookings,
-                payments, scheduling, inventory, and customer management.
+                The customer journey and internal workflow had to work together. A public
+                booking interface could not be treated separately from the operational
+                system that would manage requests after submission.
               </p>
               <p>
-                Information was spread across multiple touchpoints, creating friction,
-                inefficiencies, and operational inconsistency.
+                Information was previously spread across multiple touchpoints, creating
+                friction, manual coordination, and limited visibility across bookings,
+                inventory, schedules, and customer details.
               </p>
               <p>
-                The platform needed to support multiple booking types, simplify admin
-                workflows, improve visibility, and remain scalable as operations expanded.
+                The platform needed to support multiple booking types, improve customer
+                discovery, simplify admin workflows, and remain scalable as operations
+                expanded.
               </p>
             </CaseBlock>
           </div>
@@ -174,10 +223,10 @@ export default function GladiatorCaseStudy() {
                 <span className="border-t border-bone/10 pt-3">Boat Rentals</span>
               </div>
               <p>
-                The design and development process focused on simplifying booking flows,
-                reducing operational friction, improving administrative visibility,
-                building reusable interface systems, and ensuring scalability across
-                future services.
+                The design and development process focused on connecting customer-facing
+                booking intent with operational follow-through: simplifying discovery,
+                reducing admin friction, improving visibility, and building reusable
+                systems for future services.
               </p>
             </div>
           </div>
@@ -187,11 +236,22 @@ export default function GladiatorCaseStudy() {
       <section data-nav-theme="light" className="px-5 py-24 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
-            eyebrow="Operational Screens"
-            title="Interfaces designed around daily admin workflows."
-            copy="The platform extended beyond booking capture into the operational surfaces needed to manage services, inventory, properties, and logistics."
+            eyebrow="Customer Website"
+            title="A public booking experience for private leisure services."
+            copy="The customer-facing website gives users a polished way to understand the offer, explore available categories, and start a charter or stay request."
           />
-          <ProjectScreenGrid screens={screens} />
+          <ProjectScreenGrid screens={customerScreens} />
+        </div>
+      </section>
+
+      <section data-nav-theme="light" className="px-5 py-24 md:px-8 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Admin Platform"
+            title="Interfaces designed around daily admin workflows."
+            copy="The admin platform extends the customer booking experience into the operational surfaces needed to manage services, inventory, properties, and logistics."
+          />
+          <ProjectScreenGrid screens={adminScreens} />
         </div>
       </section>
 
@@ -227,14 +287,14 @@ export default function GladiatorCaseStudy() {
           </CaseBlock>
           <CaseBlock title="Outcome" dark>
             <p>
-              The result was a scalable digital platform that significantly improved
-              operational structure, centralized booking management, and created a more
-              organized customer experience.
+              The result was a connected customer and operations platform: a polished
+              public-facing site for booking intent and a centralized admin system for
+              managing the operational work behind each service.
             </p>
             <p>
               The system established a stronger operational foundation for future growth
-              while improving visibility, usability, and operational consistency across
-              the business.
+              while improving customer presentation, usability, internal visibility, and
+              operational consistency across the business.
             </p>
           </CaseBlock>
         </div>

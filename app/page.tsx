@@ -28,14 +28,14 @@ const projects = [
     liveLabel: "Behance"
   },
   {
-    title: "Gladiator Booking & Operations Platform",
+    title: "Gladiator Customer Booking & Operations Platform",
     description:
-      "A scalable booking and administration system for managing boat cruises, beach house reservations, operational workflows, and customer management.",
+      "A customer-facing booking website and admin system for managing yacht charters, boat transfers, waterfront stays, operational workflows, and customer requests.",
     tags: ["Next.js", "React", "Supabase", "Vercel", "Product Design"],
     href: "/work/gladiator",
-    imageLabel: "Gladiator dashboard screenshot",
-    imageSrc: "/gladiator-dahsboard.png",
-    liveUrl: "https://admin.gladiatorleisures.com"
+    imageLabel: "Gladiator customer-facing homepage screenshot",
+    imageSrc: "/gladiator-customer-homepage.png",
+    liveUrl: "https://www.gladiatorleisures.com"
   },
   {
     title: "Moneda Digital Systems & Website Redesign",

@@ -8,20 +8,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#11100e",
-        charcoal: "#181612",
-        paper: "#f4efe7",
-        bone: "#fffaf2",
-        clay: "#c86f3a",
-        gold: "#b88a4a",
-        mist: "#d8d0c4"
+        ink: "#291720",
+        charcoal: "#3a2030",
+        paper: "#fff5f8",
+        bone: "#fff8fb",
+        clay: "#b44076",
+        gold: "#e38ab4",
+        mist: "#e8ccda"
       },
       fontFamily: {
         sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Georgia", "serif"]
       },
       boxShadow: {
-        soft: "0 24px 80px rgba(17, 16, 14, 0.18)"
+        soft: "0 24px 80px rgba(41, 23, 32, 0.18)"
       }
     }
   },

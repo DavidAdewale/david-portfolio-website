@@ -17,9 +17,9 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "David Adewale | Product Designer & Frontend Builder",
+  title: "David Adewale | Web Design, Development & Website Management",
   description:
-    "Portfolio of David Adewale, a product designer and frontend builder creating scalable digital experiences.",
+    "I design, build, and manage websites. Explore Gladiator and DiasporaSpot: customer experiences, content platforms, booking systems, and ongoing website care.",
   metadataBase: new URL("https://david-adewale.vercel.app")
 };
 
@@ -31,9 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
       <body>
-        <div className="noise" />
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <Navbar />
-        {children}
+        <div id="main-content">{children}</div>
         <Footer />
       </body>
     </html>

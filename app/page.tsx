@@ -1,218 +1,80 @@
-import AnimatedText from "@/components/AnimatedText";
-import PlaceholderImage from "@/components/PlaceholderImage";
-import ProfilePortrait from "@/components/ProfilePortrait";
-import ProjectCard from "@/components/ProjectCard";
-import SectionHeader from "@/components/SectionHeader";
-import VideoEmbed from "@/components/VideoEmbed";
+import Image from "next/image";
+import Link from "next/link";
+import ScreenshotImage from "@/components/ScreenshotImage";
 
-const projects = [
+const websites = [
   {
-    title: "DiasporaSpot Content Platform & Website",
-    description:
-      "Designed and developed an SEO-friendly content platform for diaspora professionals, with Sanity CMS, workshop signup workflows, email capture, and analytics.",
-    tags: ["Next.js", "React", "Sanity CMS", "MailerLite", "Product Strategy"],
-    href: "/work/diasporaspot",
-    imageLabel: "DiasporaSpot homepage screenshot",
-    imageSrc: "/diasporaspot-homepage.png",
-    liveUrl: "https://www.diasporaspot.com/"
+    number: "01", name: "Gladiator", category: "HOSPITALITY & LEISURE", href: "/work/gladiator", url: "https://www.gladiatorleisures.com", domain: "gladiatorleisures.com", image: "/gladiator-customer-homepage.png",
+    title: "From a customer’s first click to the team’s daily operations.",
+    description: "I designed and built Gladiator’s customer website and the admin platform behind it, connecting yacht charters, boat transfers, and waterfront stays with the tools the team uses to manage bookings.",
+    scope: ["Customer website & booking journeys", "Admin dashboard & booking management", "Vessel, property & transport management", "Customer records & payment status workflows"],
+    management: "I currently manage the website and platform, resolving issues and improving customer journeys and operational features as the business evolves.",
+    stack: "Next.js · React · Supabase · Vercel"
   },
   {
-    title: "South African Tourism Campaign Graphics",
-    description:
-      "Led art direction and campaign asset design across key visuals, social media graphics, video edits, and visual systems for South African Tourism campaigns.",
-    tags: ["Art Direction", "Graphic Design", "Campaign Design", "Social Media", "Video Editing"],
-    href: "/work/south-african-tourism",
-    imageLabel: "South African Tourism campaign key visual",
-    imageSrc: "/sat kv1.jpg",
-    liveUrl: "https://www.behance.net/gallery/235717421/South-African-Tourism",
-    liveLabel: "Behance"
-  },
-  {
-    title: "Gladiator Customer Booking & Operations Platform",
-    description:
-      "A customer-facing booking website and admin system for managing yacht charters, boat transfers, waterfront stays, operational workflows, and customer requests.",
-    tags: ["Next.js", "React", "Supabase", "Vercel", "Product Design"],
-    href: "/work/gladiator",
-    imageLabel: "Gladiator customer-facing homepage screenshot",
-    imageSrc: "/gladiator-customer-homepage.png",
-    liveUrl: "https://www.gladiatorleisures.com"
-  },
-  {
-    title: "Moneda Digital Systems & Website Redesign",
-    description:
-      "Redesigned institutional digital systems and communication infrastructure to improve investor-facing clarity, scalability, and operational consistency.",
-    tags: ["UX/UI", "Brand Systems", "Information Architecture", "Web Design"],
-    href: "/work/moneda",
-    imageLabel: "Moneda website screenshot",
-    imageSrc: "/moneda-homepage.png",
-    liveUrl: "https://www.moneda.africa/"
-  },
-  {
-    title: "1952 Africa CMS & Digital Platform",
-    description:
-      "A scalable content management and digital archive system for organizing artist profiles, artworks, programs, exhibitions, and institutional storytelling.",
-    tags: ["Next.js", "React", "Supabase", "CMS Architecture", "Vercel"],
-    href: "/work/1952-africa",
-    imageLabel: "1952 Africa CMS and digital archive preview",
-    imageSrc: "/1952-africa-homepage.png",
-    liveUrl: "https://www.1952africa.art/"
+    number: "02", name: "DiasporaSpot", category: "CONTENT, COMMUNITY & EVENTS", href: "/work/diasporaspot", url: "https://www.diasporaspot.com", domain: "diasporaspot.com", image: "/diasporaspot-homepage.png",
+    title: "A publishing platform built to turn interest into participation.",
+    description: "I designed and built DiasporaSpot’s website, bringing articles, workshops, and opportunities into one experience, with a CMS for the team and connected registration, payment, and email workflows.",
+    scope: ["Responsive website & article publishing", "Sanity CMS for content and workshops", "Workshop registration & Stripe checkout", "MailerLite integration & analytics setup"],
+    management: "I currently manage and develop the site, supporting its content systems and improving workshop discovery, registration, and the integrations behind them.",
+    stack: "Next.js · Sanity · Supabase · Stripe · MailerLite"
   }
 ];
-
-const skillGroups = [
-  {
-    title: "Design",
-    skills: [
-      "UX/UI Design",
-      "Graphic Design",
-      "Art Direction",
-      "Campaign Design",
-      "Design Systems",
-      "Information Architecture"
-    ]
-  },
-  {
-    title: "Frontend",
-    skills: ["Next.js", "React", "JavaScript", "HTML/CSS", "Supabase", "API Integrations", "Vercel"]
-  },
-  {
-    title: "Workflow",
-    skills: ["AI-Assisted Development", "Frontend Architecture", "SEO Fundamentals", "Cross-Browser Optimization"]
-  }
+const otherWork = [
+  { name: "Moneda", type: "Website redesign & digital communications", image: "/moneda-homepage.png", href: "/work/moneda" },
+  { name: "1952 Africa", type: "CMS & digital archive", image: "/1952-africa-homepage.png", href: "/work/1952-africa" },
+  { name: "South African Tourism", type: "Art direction & campaign design", image: "/sat kv1.jpg", href: "/work/south-african-tourism" }
 ];
 
 export default function Home() {
   return (
-    <main>
-      <section
-        data-nav-theme="dark"
-        className="relative min-h-screen overflow-hidden bg-ink px-5 pb-16 pt-36 text-bone md:px-8 md:pt-44"
-      >
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-end">
-          <div>
-            <p className="mb-7 text-xs font-medium uppercase tracking-[0.32em] text-gold">
-              Multidisciplinary Designer & Frontend Builder
-            </p>
-            <AnimatedText
-              lines={["David Adewale", "designs and ships", "scalable digital", "experiences."]}
-              className="font-serif text-[17vw] leading-[0.88] tracking-normal md:text-[8.2vw] lg:text-[7.4rem]"
-            />
+    <main className="portfolio">
+      <section className="home-hero" data-nav-theme="light">
+        <div className="page-shell">
+          <div className="hero-topline"><span className="eyebrow">DAVID ADEWALE / DESIGNER & DEVELOPER</span><span className="location">Based in Lagos · Working beyond borders</span></div>
+          <div className="hero-layout">
+            <div>
+              <h1>Websites built<br />with purpose.<br /><em>Managed with care.</em></h1>
+              <p className="hero-copy">I design, build, and manage websites that help businesses show up well and work better. From the pages your customers see to the systems your team relies on.</p>
+              <div className="hero-actions"><a className="button-primary" href="#work">Explore my website work <span aria-hidden="true">↘</span></a><a className="text-link" href="#contact">Let’s talk about your site <span aria-hidden="true">↗</span></a></div>
+            </div>
+            <div className="hero-aside">
+              <div className="portrait-frame"><Image src="/david.png" alt="David Adewale, website designer and developer" fill priority sizes="(min-width: 900px) 330px, 240px" className="object-contain object-bottom" /></div>
+              <div className="portrait-caption"><span>Design thinking.<br />Technical follow-through.</span><span className="caption-arrow" aria-hidden="true">↗</span></div>
+            </div>
           </div>
-          <div className="md:pb-4">
-            <ProfilePortrait />
-            <p className="max-w-xl text-xl leading-8 text-bone/82 md:text-2xl md:leading-9">
-              I design and ship scalable digital experiences, brand systems, and campaign
-              visuals using modern frontend tools and systems-driven creative thinking.
-            </p>
-            <p className="mt-7 max-w-xl text-base leading-7 text-bone/54">
-              Hybrid designer-developer with experience building booking platforms, CMS
-              systems, operational tools, campaign graphics, and investor-facing digital
-              experiences across startups, hospitality, tourism, finance, and media.
-            </p>
-          </div>
-        </div>
-        <div className="mx-auto mt-16 max-w-7xl md:mt-24">
-          <VideoEmbed
-            title="Selected interface montage"
-            src="https://www.youtube.com/embed/sT-mjojTjDI?si=QcEpwQHZM60ahgdq"
-          />
+          <div className="hero-proof"><span className="eyebrow">BUILT BY ME. STILL MANAGED BY ME.</span><a href="#gladiator">Gladiator <span aria-hidden="true">↗</span></a><a href="#diasporaspot">DiasporaSpot <span aria-hidden="true">↗</span></a><span className="proof-note">Design → Development → Ongoing care</span></div>
         </div>
       </section>
 
-      <section
-        id="work"
-        data-nav-theme="light"
-        className="bg-paper px-5 py-24 text-ink md:px-8 md:py-32"
-      >
-        <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            eyebrow="Selected Work"
-            title="Case studies across product systems, campaign visuals, and build detail."
-            copy="A focused selection of digital platforms, brand systems, campaign graphics, and frontend experiences designed for clarity and scale."
-          />
-          <div>
-            {projects.map((project, index) => (
-              <ProjectCard key={project.title} {...project} index={index} />
-            ))}
-          </div>
+      <section id="work" className="work-section" data-nav-theme="light">
+        <div className="page-shell">
+          <div className="section-intro"><div><p className="eyebrow">01 / SELECTED WEBSITE WORK</p><h2>Beyond the homepage.</h2></div><p>Two websites I built and continue to manage. Here’s what went into them, on the screen and behind the scenes.</p></div>
+          {websites.map((project) => <article className="featured-project" id={project.name.toLowerCase()} key={project.name}>
+            <div className="project-heading"><h3><span>{project.number}</span>{project.name}</h3><span className="status-label"><i /> Built & currently managed by me</span></div>
+            <div className="project-layout">
+              <Link className={`website-preview ${project.number === "02" ? "preview-warm" : ""}`} href={project.href} aria-label={`Explore the ${project.name} case study`}>
+                <div className="browser-bar"><span aria-hidden="true">● ● ●</span><span>{project.domain}</span><span aria-hidden="true">↗</span></div>
+                <div className="website-screen"><ScreenshotImage src={project.image} alt={`${project.name} website I designed and developed`} sizes="(min-width: 900px) 57vw, 100vw" /></div>
+                <span className="preview-caption">Explore the project <span aria-hidden="true">↗</span></span>
+              </Link>
+              <div className="project-details"><p className="eyebrow">{project.category}</p><h4>{project.title}</h4><p>{project.description}</p><h5>WHAT I BUILT</h5><ul className="scope-list">{project.scope.map(item => <li key={item}><span aria-hidden="true">↗</span>{item}</li>)}</ul><div className="management-note"><span className="eyebrow">ONGOING RESPONSIBILITY</span><p>{project.management}</p></div><div className="project-links"><Link className="text-link" href={project.href}>Full case study <span aria-hidden="true">↗</span></Link><a href={project.url} target="_blank" rel="noreferrer">Visit live site ↗</a></div><p className="stack-note">{project.stack}</p></div>
+            </div>
+          </article>)}
         </div>
       </section>
 
-      <section
-        id="about"
-        data-nav-theme="dark"
-        className="bg-charcoal px-5 py-24 text-bone md:px-8 md:py-32"
-      >
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
-          <SectionHeader eyebrow="About" title="Designer by craft. Builder by habit." dark />
-          <div className="space-y-7 text-xl leading-9 text-bone/70 md:text-2xl md:leading-10">
-            <p>
-              I’m a multidisciplinary designer working across product design, frontend
-              development, graphic design, digital systems, and strategic communications.
-            </p>
-            <p>
-              My work focuses on building scalable systems that balance usability,
-              operational clarity, storytelling, and business goals.
-            </p>
-            <p>
-              Over the last 5+ years, I’ve worked with startups, agencies, and
-              investment-focused organizations to design and ship digital products,
-              communication systems, operational platforms, and web experiences.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section id="management" className="management-section" data-nav-theme="dark"><div className="page-shell"><div className="section-intro"><div><p className="eyebrow">02 / WEBSITE MANAGEMENT</p><h2>A website needs someone<br /><em>who stays with it.</em></h2></div><p>Launching is one part of the job. I can take responsibility for the updates, fixes, and improvements that keep your website useful as your business changes.</p></div><div className="service-grid">{[
+        ["01", "Keep it current", "Page updates, new content, campaign landing pages, and CMS support that keep your website aligned with what your business is doing."],
+        ["02", "Keep it working", "Troubleshooting forms, booking flows, payments, and integrations. Tracking down issues and checking the complete journey after a fix."],
+        ["03", "Make it better", "Clearer navigation, better mobile layouts, technical SEO foundations, and thoughtful improvements informed by how people use the site."]
+      ].map(([n,title,copy]) => <article key={n}><span className="service-number">{n} /</span><h3>{title}</h3><p>{copy}</p></article>)}</div><div className="management-bottom"><span>One point of contact for design, development, and day-to-day improvements.</span><a href="#contact" className="text-link">Let’s discuss what you need ↗</a></div></div></section>
 
-      <section
-        id="skills"
-        data-nav-theme="light"
-        className="bg-paper px-5 py-24 text-ink md:px-8 md:py-32"
-      >
-        <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            eyebrow="Skills"
-            title="A practical toolkit for designing, building, and scaling products."
-          />
-          <div className="grid gap-5 md:grid-cols-3">
-            {skillGroups.map((group) => (
-              <div key={group.title} className="border-t border-ink/12 pt-6">
-                <h3 className="mb-6 font-serif text-3xl text-ink">{group.title}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-ink/10 px-3 py-1.5 text-sm text-ink/68"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="other-section" data-nav-theme="light"><div className="page-shell"><div className="section-intro"><div><p className="eyebrow">03 / A WIDER DESIGN PRACTICE</p><h2>More work. Same attention.</h2></div><p>A background in brand and communication design helps me make websites that feel considered, consistent, and true to the business.</p></div><div className="other-grid">{otherWork.map(project => <Link href={project.href} className="other-project" key={project.name}><div className="other-image"><ScreenshotImage src={project.image} alt={`${project.name} project preview`} sizes="(min-width: 768px) 33vw, 100vw" /></div><div className="other-title"><h3>{project.name}</h3><span aria-hidden="true">↗</span></div><p>{project.type}</p></Link>)}</div></div></section>
 
-      <section
-        id="contact"
-        data-nav-theme="dark"
-        className="bg-ink px-5 py-24 text-bone md:px-8 md:py-32"
-      >
-        <div className="mx-auto max-w-5xl text-center">
-          <SectionHeader
-            eyebrow="Contact"
-            title="Let’s build something thoughtful."
-            copy="Whether it’s a product, platform, or digital experience, I enjoy working on systems that combine clarity, usability, and execution."
-            dark
-          />
-          <a
-            href="mailto:adewaledavidola@gmail.com"
-            className="inline-flex rounded-full bg-bone px-6 py-3 text-sm font-semibold text-ink transition hover:bg-gold"
-          >
-            adewaledavidola@gmail.com
-          </a>
-        </div>
-      </section>
+      <section id="about" className="about-section" data-nav-theme="light"><div className="page-shell about-layout"><div><p className="eyebrow">04 / A LITTLE ABOUT ME</p><h2>A designer’s eye.<br />A builder’s mindset.</h2></div><div><p className="about-lead">I’m David, a designer and developer who connects how a website looks with how it actually works.</p><p>My experience spans hospitality, community platforms, finance, arts, and tourism. I work across user experience, visual design, development, and the practical systems behind a site: content management, bookings, payments, and email integrations.</p><p>With Gladiator and DiasporaSpot, my work continues after launch. That ongoing involvement shapes how I build: clear for customers, manageable for the team, and ready to improve over time.</p><div className="expertise-tags">{["Web design & development", "Website management", "CMS & integrations", "Brand & communication design"].map(s => <span key={s}>{s}</span>)}</div></div></div></section>
+
+      <section id="contact" className="contact-section" data-nav-theme="dark"><div className="page-shell"><p className="eyebrow">LET’S WORK TOGETHER</p><h2>Your website deserves<br /><em>a capable pair of hands.</em></h2><div className="contact-bottom"><p>Need someone to manage your site, improve what’s there, or build what comes next? Let’s talk.</p><a className="button-primary" href="mailto:adewaledavidola@gmail.com">Email David <span aria-hidden="true">↗</span></a></div><a className="contact-email" href="mailto:adewaledavidola@gmail.com">adewaledavidola@gmail.com</a></div></section>
     </main>
   );
 }

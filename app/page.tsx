@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScreenshotImage from "@/components/ScreenshotImage";
+import VideoEmbed from "@/components/VideoEmbed";
 
 const websites = [
   {
@@ -61,6 +62,21 @@ export default function Home() {
               <div className="project-details"><p className="eyebrow">{project.category}</p><h4>{project.title}</h4><p>{project.description}</p><h5>WHAT I BUILT</h5><ul className="scope-list">{project.scope.map(item => <li key={item}><span aria-hidden="true">↗</span>{item}</li>)}</ul><div className="management-note"><span className="eyebrow">ONGOING RESPONSIBILITY</span><p>{project.management}</p></div><div className="project-links"><Link className="text-link" href={project.href}>Full case study <span aria-hidden="true">↗</span></Link><a href={project.url} target="_blank" rel="noreferrer">Visit live site ↗</a></div><p className="stack-note">{project.stack}</p></div>
             </div>
           </article>)}
+        </div>
+      </section>
+
+      <section id="showreel" className="pb-16 md:pb-24" data-nav-theme="light" aria-labelledby="showreel-title">
+        <div className="page-shell">
+          <div className="section-intro">
+            <div>
+              <p className="eyebrow">SELECTED WORK / VIDEO</p>
+              <h2 id="showreel-title">See the work in motion.</h2>
+            </div>
+          </div>
+          <VideoEmbed
+            title="David Adewale — selected interface montage"
+            src="https://www.youtube.com/embed/sT-mjojTjDI?si=QcEpwQHZM60ahgdq"
+          />
         </div>
       </section>
 
